@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Allow only Java files and .gitignore itself
+!*.java
+!.gitignore
