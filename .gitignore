@@ -1,6 +1,9 @@
 # Ignore everything
 *
 
-# Allow only Java files and .gitignore itself
+# Allow only Java source files and this .gitignore file
 !*.java
 !.gitignore
+
+# Ignore compiled class files even if matched by !*.java
+*.class
