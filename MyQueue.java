@@ -74,7 +74,7 @@ public class MyQueue {
             int n = delete();
             System.out.print(n + " ");
         }
-        System.err.println();
+        System.err.print("*");
 
         // System.out.println(delete());
         // System.out.println(delete());
