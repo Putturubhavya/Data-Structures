@@ -48,7 +48,37 @@ public class BST {
         }
     }
 
-    static
+    static Node delete(Node root, int key) {
+        if (root == null)
+            return null;
+
+        if (key < root.data) {
+            root.left = delete(root.left, key);
+        } else if (key > root.data) {
+            root.right = delete(root.right, key);
+        } else {
+            // Node found
+            if (root.left == null && root.right == null) {
+                return null;
+            } else if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            } else {
+                Node successor = findMin(root.right);
+                root.data = successor.data;
+                root.right = delete(root.right, successor.data);
+            }
+        }
+        return root;
+    }
+
+    static Node findMin(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
 
     public static void main(String[] args) {
         Node root = null;
